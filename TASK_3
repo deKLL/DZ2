@@ -1,0 +1,82 @@
+//Task_3
+#include <iostream>
+using namespace std;
+int main()
+{
+    while (true)
+    {
+        int line;
+        int lateness;
+        int salary;
+        int menu;
+        const double dolPerLine{ 0.5 };
+
+        std::cout << "Vasia gets 50$ for each 100 lines of code. "
+            "For every third lateness, he is fined by 20$.\n\n";
+        std::cout << "Please type a desired number from the following menu:\n\n";
+
+        std::cout << "1 - Enter the wished income of Vasia, his quantity of latenesses,"
+            "\n\tand I'll count how many lines of code he should write.\n\n";
+
+        std::cout << "2 - Enter the amount of code lines, written by Vasia and desired salary. "
+            "\n\tI'll count how many times Vasia can be late.\n\n";
+
+        std::cout << "3 - Enter the amount of code lines, quantity of latenesses, and I'll "
+            "\n\tcalculate if he is paid at all.\n\n";
+        std::cin >> menu;
+
+        switch (menu)
+        {
+        case 1:
+        {
+            std::cout << "You are in menu's item 1:\n";
+            std::cout << "Please enter the desired salary: ";
+            std::cin >> salary;
+            std::cout << "Please enter the quantity of his latenesses: ";
+            std::cin >> lateness;
+            line = (lateness / 3 * 20 / dolPerLine) + (salary / dolPerLine);
+            std::cout << "Vasia has to write " << line << " lines of code\n";
+        }
+        break;
+        case 2:
+        {
+            std::cout << "You are in menu's item 2:\n";
+            std::cout << "Please enter the amount of code lines, written by Vasia: ";
+            std::cin >> line;
+            std::cout << "Please enter the desired salary: ";
+            std::cin >> salary;
+            if (salary >= (line * dolPerLine))
+            {
+                lateness = ((salary - (line * dolPerLine)) / 20);
+                std::cout << "\nVasia can be late " << lateness * 3 << " times.";
+            }
+            else
+                std::cout << "Error, take a look at Vasia's dollars per line rate" << "\n";
+        }
+        break;
+        case 3:
+        {
+            std::cout << "You are in menu's item 3:\n";
+            std::cout << "Please enter the amount of code lines, written by Vasia: ";
+            std::cin >> line;
+            std::cout << "Please enter the quantity of latenesses: ";
+            std::cin >> lateness;
+
+            if ((line * dolPerLine) - (lateness / 3 * 20) >= 0)
+            {
+                std::cout << "Vasia will earn " << (line * dolPerLine) - (lateness / 3 * 20) << " dollars.\n";
+            }
+            else
+                std::cout << "Vasia will have to pay to the company " << (lateness / 3 * 20) - (line * dolPerLine) << " dollars.\n";
+
+        }
+        break;
+        default:
+            std::cout << "Wrong data, try again." << "\n";
+
+        }
+
+        return 0;
+    }
+
+}
