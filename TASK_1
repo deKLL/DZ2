@@ -1,0 +1,42 @@
+//TASK 1
+#include <iostream>
+#include <windows.h>
+using namespace std;
+int main()
+{
+        SetConsoleCP(1251);
+        char symbol;
+        std::cout << "Please enter a symbol: ";
+        std::cin >> symbol;
+
+        if (symbol >= '0' && symbol <= '9')
+        {
+            std::cout << "\nThis is a digit" << "\n";
+        }
+
+        else if (symbol >= 'A' && symbol <= 'Z')
+        {
+            std::cout << "\nThis is a capital letter of English alphabet\n";
+        }
+
+        else if (symbol >= 'a' && symbol <= 'z')
+        {
+            std::cout << "\nThis is a lower case letter of English alphabet\n";
+        }
+
+        else if (symbol >= 'А' && symbol <= 'Я' || symbol == 'Ё')
+        {
+            std::cout << "\nThis is a capital letter of Ukrainian alphabet\n";
+        }
+
+        else if (symbol >= 'а' && symbol <= 'я' || symbol == 'ё')
+        {
+            std::cout << "\nThis is a lower case letter of Ukrainian alphabet\n";
+        }
+
+        else
+            std::cout << "\nThis is a sign\n";
+
+        return 0;
+
+}
