@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+   srand(time(0)); // Initialization of random number generator
+   int num1 = rand() % 9 + 1; 
+   int num2 = rand() % 9 + 1; 
+   int result = num1 * num2;
+
+   cout << "What is " << num1 << " * " << num2 << "? ";
+   int answer;
+   cin >> answer;
+
+   while (answer != result) {
+      cout << "Incorrect. Please try again." << endl;
+      cout << "What is " << num1 << " times " << num2 << "? ";
+      cin >> answer;
+   }
+
+   cout << "Correct! Well done." << endl;
+
+   return 0;
+}
