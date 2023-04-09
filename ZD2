@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double cost;
+    int operatorCode;
+    cout << "Enter the amount of minutes: ";
+    cin >> cost;
+    cout << "Select operator code (1 - Kyivstar, 2 - Vodafone, 3 - Lifecell): ";
+    cin >> operatorCode;
+    switch (operatorCode) {
+    case 1:
+        cout << "Kyivstar call cost: " << cost * 1.2 << endl;
+        break;
+    case 2:
+        cout << "Vodafone call cost: " << cost * 1.1 << endl;
+        break;
+    case 3:
+        cout << "Lifecell call cost: " << cost * 1.15 << endl;
+        break;
+    default:
+        cout << "Invalid operator code." << endl;
+        break;
+    }
+    return 0;
+}
